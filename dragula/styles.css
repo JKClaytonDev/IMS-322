@@ -1,0 +1,18 @@
+
+img{
+	width: 250;
+	height: 250;
+	float: left;
+}
+.description{
+	height: 250;
+}
+.buttons{
+	float: bottom;
+	width: 800px;
+	height: 100px;
+}
+.buttons img{
+	width: 30;
+	height: 30;
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+<title>touchy</title>
+<script src="hammer.min.js"></script>
+<style>
+body {
+ box-sizing: border-box;
+ overflow: hidden;
+ font-family: Tahoma, Helvetica, sans-serif;
+}
+.container {
+ display: flex;
+ flex-wrap: no-wrap;
+ background: #cccccc;
+ width: 2800px;
+ border: solid 2px black;
+}
+.container > div {
+ height: 100px;
+ width: 100px;
+ margin: 20px;
+ flex-shrink: 0;
+ font: 200% bold;
+ text-align: center;
+}
+.container > div:nth-child(3n + 1) {
+ background-color: red;
+}
+.container > div:nth-child(3n + 2) {
+ background-color: green;
+}
+.container > div:nth-child(3n + 3) {
+ background-color: blue;
+}
+.rightarrow{
+opacity: 0.5;
+top: 10px;
+left:1200px;
+position: absolute;
+display: block;
+z-index: 1;
+float: right;
+}
+.leftarrow{
+opacity: 0.5;
+top: 10px;
+left:200px;
+position: absolute;
+display: block;
+z-index: 1;
+float: right;
+}
+</style>
+</head>
+
+<body onload="start();">
+<div class="container">
+</div>
+
+<div style="max-width:600px;margin:auto">
+<p>Here's the deal.  The stripa of blocks above moves left and right somehow; figure out how.  Look at the code to see (way too much) CSS that makes the movement possible.
+</p>
+<img src = "img/leftarrow.png" width="100" height="100" class = "leftarrow" onmousedown="buttonCI(-1, 30)">
+<img src = "img/rightarrow.png" width="100" height="100" class = "rightarrow" onmousedown="buttonCI(1, 30)">
+<p>
+We want to improve the functionality here.
+  <ol>
+    <li>We should limit the movement of the strip so that it cannot go off the screen completely.  How can we do that?  What do we need to know for this?</li>
+    <li>We should add arrow overlays at the left and right edges (you've seen this sort of thing) so that clicking one moves the strip left or right.
+    </li>
+    <li>We should use the hammer.js library to allow for panning or even swiping.  Hey, what is the difference between panning and swiping?
+    </li>
+    <li>This should be a community project&mdash;use Slack to discuss with each other.
+    </ol>
+
+
+
+</p>
+  
+<script>
+let contain = document.querySelector(".container");
+//make some divs
+for (let i = 1; i < 21 ; i++) {
+  let el = document.createElement("div");
+  let text = document.createTextNode(i);
+  el.appendChild(text);		    
+  contain.appendChild(el);		    
+}
+
+
+let translate = 0;
+function start(){
+var hammertime = new Hammer(myElement, myOptions);
+hammertime.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL });
+}
+function buttonCI(p, h){
+   if (translate >= -2640){
+	changeIt(-1,30);
+ }
+ if (translate <= 1350) {
+	changeIt(1,30);
+ }
+ changeIt(p, h);
+}
+function changeIt(pos_neg,howmuch) {
+  translate += pos_neg * howmuch;
+  contain.style.transform = `translate(${translate}px)`;
+}
+
+ document.addEventListener("keydown",function(event) {
+    if (translate >= -2640){
+	changeIt(-1,30);
+ }
+ if (translate <= 1350) {
+	changeIt(1,30);
+ }
+  if (event.key === 'ArrowRight') {
+    changeIt(-1,30);
+  }
+else if (event.key === 'ArrowLeft') {
+   changeIt(1,30);
+  }
+});
+
+
+</script>
+</body>
+</html>
