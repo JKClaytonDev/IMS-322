@@ -1,0 +1,14 @@
+.shield{
+	position: absolute;
+	display: block;
+	  margin-left: auto;
+	  margin-right: auto;
+	left: 100px;
+	right: 100px;
+	color: red;
+	background-color: blue;
+	width: 500px;
+	font-size: 30px;
+	text-align: center;
+	z-index: 1;
+}

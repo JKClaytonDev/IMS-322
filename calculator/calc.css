@@ -1,0 +1,102 @@
+.calc {
+  max-width: 200px;
+  margin: auto;
+  padding: 10px;
+  border: solid 2px grey;
+  font-family: Tahoma, Helvetica, sans-serif;
+  background: #eeeeee;
+}
+
+h1 {
+	width: 500px;
+	background-color: red;
+	text-align: center;
+	margin: auto;
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 100px;
+}
+
+.button_div {
+    text-align: center;
+    margin-top: 1vh;
+}
+
+button {
+    font-size: 150%;
+    border: solid 1px black;
+    border-radius: 4px;
+	border-radius: 5px;
+}
+.calculatorEdges{
+	border-radius: 15px;
+	background-color: black;
+	max-width: 500px;
+	padding: 15px;
+  margin: auto;
+  animation-duration: 1s;
+  animation-name: moveUp;
+  animation-iteration-count: 1;
+}
+h1{
+	animation-duration: 2s;
+  animation-name: moveDown;
+  animation-iteration-count: 1;
+}
+
+@keyframes moveUp {
+  from {
+    transform: translate(0,900px);
+  }
+
+  to {
+    transform: translate(0,20);
+  }
+}
+@keyframes moveDown {
+  from {
+    transform: translate(0,-150px);
+  }
+
+  to {
+    transform: translate(0,0);
+  }
+}
+@keyframes Shake{
+	0% { transform: translate(1px, 1px) rotate(0deg); }
+  25% { transform: translate(-3px, 0px) rotate(1deg); }
+  50% { transform: translate(3px, 2px) rotate(0deg); }
+  75% { transform: translate(1px, -1px) rotate(1deg); }
+  100% { transform: translate(-3px, 0px) rotate(1deg); }
+}
+button:hover {
+  /* Start the shake animation and make the animation last for 0.5 seconds */
+  animation: Shake 0.5s;
+
+  /* When the animation is finished, start again */
+  animation-iteration-count: 1;
+}
+button{
+	width: 122px;
+	height: 111px;
+	font-size: 50px;
+	margin-top: default;
+	font-family: 'Trebuchet MS', sans-serif;
+	background-color: grey;
+	color: white;
+}
+button:hover{
+	background-color: red;
+}
+.topInputBox{
+	font-family: 'Courier New', monospace;
+
+	font-size: 55px;
+width = 500px;
+
+background-color: green;	
+}
+.textInput{
+	margin: auto;
+	text-align: center;
+}

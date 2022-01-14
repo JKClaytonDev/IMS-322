@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+<title>Calculator</title>
+<script src="calc_data.js"></script>
+<link rel="stylesheet" href="calc.css">
+
+</head>
+
+<body>
+<h1>Calculator</h1>
+<div class = "calculatorEdges">
+<div class = "topInputBox">
+<h2 id = "inputbox">0</h2>
+</div>
+<div class = "row4">
+<button type="button" id = "7" onclick="saveMemory()" title="save current value to memory">M</button>
+<button type="button" id = "8" onclick="recallMemory()" title="recall value from memory">MR</button>
+<button type="button" id = "8" onclick="submitNumber('-')" title="negative number">-</button>
+<button type="button" id = "*" onclick="submitOperator('/')" title="divide">/</button>
+</div>
+<div class = "row3">
+<button type="button" id = "7" onclick="submitNumber('7')" title="the number seven, do you really need to hover over this?">7</button>
+<button type="button" id = "8" onclick="submitNumber('8')" title="the number eight, do you really need to hover over this?">8</button>
+<button type="button" id = "9" onclick="submitNumber('9')" title="the number nine, do you really need to hover over this?">9</button>
+<button type="button" id = "*" onclick="submitOperator('*')" title="multiply">*</button>
+</div>
+<div class = "row2">
+<button type="button" id = "4" onclick="submitNumber('4')" title="the number four, do you really need to hover over this?">4</button>
+<button type="button" id = "5" onclick="submitNumber('5')" title="the number five, do you really need to hover over this?">5</button>
+<button type="button" id = "6" onclick="submitNumber('6')" title="the number six, do you really need to hover over this?">6</button>
+<button type="button" id = "-" onclick="submitOperator('-')" title="subtract">-</button>
+</div>
+<div class = "row1">
+<button type="button" id = "1" onclick="submitNumber('1')" title="the number one, do you really need to hover over this?">1</button>
+<button type="button" id = "2" onclick="submitNumber('2')" title="the number two, do you really need to hover over this?">2</button>
+<button type="button" id = "3" onclick="submitNumber('3')" title="the number three, do you really need to hover over this?">3</button>
+<button type="button" id = "+" onclick="submitOperator('+')" title="add">+</button>
+</div>
+<div class = "row0">
+<button type="button" id = "0" onclick="submitNumber('0')" title="the number zero, do you really need to hover over this?">0</button>
+<button type="button" id = "." onclick="submitNumber('.')" title="decimal">.</button>
+<button type="button" id = "=" onclick="calculateNumbers()" title="calculate numbers">=</button>
+<button type="button" id = "FN" onclick="resetValues()" class = "FNbutton">FN</button>
+</div>
+ </div>
+ <div class = "textInput">
+
+<text id = "textInput"></text>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
