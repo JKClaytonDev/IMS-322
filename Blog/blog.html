@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+<title>Bloggin</title>
+<script src="blog_data.js"></script>
+<link rel="stylesheet" href="blog.css">
+
+</head>
+
+<body>
+<div class="blog"></div>
+<div class="button_div">
+<button>Next</button>
+</div>
+
+<script>
+function writeCurrent(idx) {
+  blogdiv.innerHTML = posts[idx];
+}
+
+let current = 0;
+const blogdiv = document.querySelector(".blog");
+     writeCurrent(current);
+
+
+document.addEventListener("click",function(event) {
+  let et = event.target;
+  if (et.innerText === 'Next') {
+     current++;
+     writeCurrent(current);
+  }
+});
+
+</script>    
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+

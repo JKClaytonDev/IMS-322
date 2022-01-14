@@ -1,0 +1,22 @@
+.blog {
+  max-width: 600px;
+  margin: auto;
+  padding: 10px;
+  border: solid 2px grey;
+  font-family: Tahoma, Helvetica, sans-serif;
+  background: #eeeeee;
+}
+
+h1 {
+  text-align: center;
+}
+
+.button_div {
+    text-align: center;
+    margin-top: 1vh;
+}
+
+button {
+    font-size: 150%;
+    border: solid 1px black;
+    border-radius: 4px;
